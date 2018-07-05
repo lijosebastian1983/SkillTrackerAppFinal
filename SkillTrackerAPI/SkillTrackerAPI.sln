@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillTrackerAPI", "SkillTrackerAPI\SkillTrackerAPI.csproj", "{4DD6B10D-FA5F-4FC3-8498-EAD78AD35E90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillTrackerDataLayer", "SkillTrackerDataLayer\SkillTrackerDataLayer.csproj", "{12D6B428-362E-4B3A-A440-15A0FED0177E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillTrackerNBenchTest", "SkillTrackerNBenchTest\SkillTrackerNBenchTest.csproj", "{6D9C1469-96E8-4564-99F1-AC5C8BE4B491}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillTrackerTest", "SkillTrackerTest\SkillTrackerTest.csproj", "{B33C12FF-33B6-4CD4-81DE-1A155C6B21E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DD6B10D-FA5F-4FC3-8498-EAD78AD35E90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DD6B10D-FA5F-4FC3-8498-EAD78AD35E90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DD6B10D-FA5F-4FC3-8498-EAD78AD35E90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DD6B10D-FA5F-4FC3-8498-EAD78AD35E90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12D6B428-362E-4B3A-A440-15A0FED0177E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12D6B428-362E-4B3A-A440-15A0FED0177E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12D6B428-362E-4B3A-A440-15A0FED0177E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12D6B428-362E-4B3A-A440-15A0FED0177E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D9C1469-96E8-4564-99F1-AC5C8BE4B491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D9C1469-96E8-4564-99F1-AC5C8BE4B491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D9C1469-96E8-4564-99F1-AC5C8BE4B491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D9C1469-96E8-4564-99F1-AC5C8BE4B491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B33C12FF-33B6-4CD4-81DE-1A155C6B21E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B33C12FF-33B6-4CD4-81DE-1A155C6B21E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B33C12FF-33B6-4CD4-81DE-1A155C6B21E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B33C12FF-33B6-4CD4-81DE-1A155C6B21E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

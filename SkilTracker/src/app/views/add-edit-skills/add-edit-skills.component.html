@@ -1,0 +1,37 @@
+<table>
+    <tr>
+        <td>
+            Skill :
+        </td>
+        <td>
+            <input type="text" name="skilltext" [(ngModel)]="skillItem.skillname" class="form-control" id="exampleInputAmount" placeholder="Skill Name">
+        </td>
+        <td>
+
+            <button type="button" class="btn btn-primary" *ngIf="!editFlag" (click)="AddSkill()">Add</button>
+            <button type="button" class="btn btn-primary" *ngIf="editFlag" (click)="UpdateSkill()">Update</button>
+            <button type="button" class="btn btn-default" *ngIf="editFlag" (click)="CancelClicked()">Cancel</button>
+
+        </td>
+    </tr>   
+</table>
+
+<table class="table">
+    <tbody>
+        <tr *ngFor="let item of SkillList">
+            <td>{{item.skillname}}</td>
+            <td>
+                <button type="button" class="btn btn-primary" (click)="EditClicked(item)">Edit</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-lg btn-danger" (click)="DeleteSkill(item)">Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td style="color: green;">{{message}}</td>
+        </tr>
+    </tbody>
+</table>
+<button type="button" [routerLink]="['/Dashboard']" class="btn btn-default">Cancel</button>
+
+

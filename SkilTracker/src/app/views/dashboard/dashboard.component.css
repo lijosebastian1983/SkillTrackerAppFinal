@@ -1,0 +1,32 @@
+.statuscolour{
+    width: 15pt;
+    height: 15pt;
+}
+
+.bluestatus{
+    background-color: blue;
+}
+
+.greenstatus{
+    background-color: green;
+}
+
+.redstatus{
+    background-color: red;
+}
+
+.maincontent
+{
+font-weight: bold;
+padding-left:65px;
+}
+
+.statistics{
+    width: 175px;
+    height:50px;
+    background-color: lightgray;
+    display: inline-block;
+    border-radius: 10px 10px 10px 10px;
+    padding-left: 10px;
+    
+}

@@ -1,0 +1,116 @@
+<form ng-form="addemployye">
+    <span class="label">{{title}}</span>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>Name</td>
+                <td>
+
+                    <input type="text" [(ngModel)]="associateItem.associatename" name="nametext" id="input${1/(\w+)/\u\1/g}" class="form-control" value="" required="required" pattern="" title="">
+
+                </td>
+                <td colspan="4">
+
+                    <img [src]="SelectedImage" class="img-responsive" alt="Image" width="40" height="30"> <br>
+                    <input type="file" name="imgupload" accept=".jpg, .jpeg, .png" [(ngModel)]="associateItem.image" (change)="ChangeImage($event)">
+                </td>
+                <td rowspan="4">
+
+                    <div>
+
+                        <button type="button" [style.border-width]="greenButtonStyle" (click)="SelectStatus(1, 0, 0)" class="btn btn-default statusbutton" style="background-color:green;color:wheat;">Green </button>
+                        <br>
+                        <br>
+                        <button type="button" [style.border-width]="blueButtonStyle" (click)="SelectStatus(0, 1, 0)" class="btn btn-default statusbutton" style="background-color:blue;color:wheat;"> Blue </button>
+                        <br>
+                        <br>
+
+                        <button type="button" [style.border-width]="redButtonStyle" (click)="SelectStatus(0, 0, 1)" class="btn btn-default statusbutton" style="background-color:red;color:wheat;">Red</button>
+
+                    </div>
+
+                </td>
+                <td rowspan="4">
+                    <div>
+                        <button type="button" [style.border-width]="level1style" (click)="SelectLevel(1, 0, 0)" class="btn btn-default levelbutton">L1</button>
+                        <br>
+                        <br>
+                        <button type="button" [style.border-width]="level2style" (click)="SelectLevel(0, 1, 0)" class="btn btn-default levelbutton"> L2 </button>
+                        <br>
+                        <br>
+                        <button type="button" [style.border-width]="level3style" (click)="SelectLevel(0, 0, 1)" class="btn btn-default levelbutton">L3</button>
+                    </div>
+                </td>
+                <td rowspan="4">
+                    Remarks
+                </td>
+                <td rowspan="4">
+
+                    <textarea name="remarkstext" [(ngModel)]="associateItem.remarks" id="input${1/(\w+)/\u\1/g}" class="form-control" rows="3" required="required"></textarea>
+
+                </td>
+            </tr>
+            <tr>
+                <td>Associate ID</td>
+                <td>
+                    <input type="text" disabled [(ngModel)]="associateItem.associateid" name="txtid" id="input${1/(\w+)/\u\1/g}" class="form-control" value="" required="required" pattern="" title="">
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="email" [(ngModel)]="associateItem.email" name="txtemail" id="input${1/(\w+)/\u\1/g}" class="form-control" value="" required="required" title="">
+
+                </td>
+            </tr>
+            <tr>
+                <td>Mobile</td>
+                <td>
+
+                    <input type="tel" [(ngModel)]="associateItem.mobile" name="txtmobile" id="input${1/(\w+)/\u\1/g}" class="form-control" value="" required="required" title="">
+
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+
+    <span class="label">Skills</span>
+    <div class="row">
+        <div *ngFor="let item of employeeSkills" class="col-md-3">
+            {{item.skillname}} ({{item.rating}}) <input type="range" #rating value={{item.rating}} (change)="ChangeRating(item, rating.value)" name="rgeratings" id="input${1/(\w+)/\u\1/g}" class="form-control" min="0" max="20" step="1" required="required" title="">
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <table>
+        <tr>
+            <td>
+                Strength :
+            </td>
+            <td>
+                <input type="text" [(ngModel)]="associateItem.strength" name="strenghttext" id="input${1/(\w+)/\u\1/g}" class="form-control" value="" required="required" pattern="" title="">
+            </td>
+            <td>
+                Weakness :
+            </td>
+            <td>
+                <input type="text" [(ngModel)]="associateItem.weakness" name="weaknesstext" id="input${1/(\w+)/\u\1/g}" class="form-control" value="" required="required" pattern="" title="">
+            </td>
+        </tr>
+    </table>
+    <br>
+    <br>
+
+    <button type="button" *ngIf="!addFlag" (click)="DeleteClicked()" class="btn btn-danger">Delete</button>
+    <button type="button" *ngIf="addFlag" class="btn btn-default">Reset</button>
+    &nbsp;&nbsp;
+    <button type="button" [routerLink]="['/Dashboard']" class="btn btn-default">Cancel</button>
+    &nbsp;&nbsp;
+    <button type="button" *ngIf="addFlag" (click)="AddEmpSkill()" class="btn btn-primary">Save</button>
+    <button type="button" *ngIf="!addFlag" (click)="UpdateEmpSkill()" class="btn btn-primary">Update</button>
+</form>

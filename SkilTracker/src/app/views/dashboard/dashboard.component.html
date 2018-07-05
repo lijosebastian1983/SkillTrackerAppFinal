@@ -1,0 +1,118 @@
+
+<div>
+    <canvas height="50px" baseChart
+            [chartType]="chartType"
+            [data]="chartData"
+            [labels]="labels"
+            [options]="lineChartOptions"
+            [legend]="ChartLegend"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+</div>
+<br>
+&nbsp;
+&nbsp;
+&nbsp;
+<div class="statistics"><span class="maincontent">{{TotalAssociates}}</span><br>Candidates</div>
+&nbsp;
+<div class="statistics"><span class="maincontent">{{Level1EmpPerc}}%</span> <br>Level1 Associates </div>
+&nbsp;
+<div class="statistics"><span class="maincontent">{{Level2EmpPerc}}%</span><br> Level2 Associates </div>
+&nbsp;
+<div class="statistics"><span class="maincontent">{{Level3EmpPerc}}%</span> <br>Level3 Associates </div>
+&nbsp;
+<div class="statistics"><span class="maincontent">{{GreenEmpPerc}}%</span> <br>Green Status </div>
+&nbsp;
+<div class="statistics"><span class="maincontent">{{BlueEmpPerc}}%</span><br>Blue Status </div>
+&nbsp;
+<div class="statistics"><span class="maincontent">{{RedEmpPerc}}%</span><br>Red Status </div>
+<br>
+&nbsp;
+&nbsp;
+&nbsp;
+<div class="statistics"><span class="maincontent">{{TotalAssociates}}</span><br>Candidates</div>
+&nbsp;
+<div class="statistics"><span class="maincontent">{{Level1EmpPerc}}%</span> <br>Level1 Associates </div>
+&nbsp;
+<div class="statistics"><span class="maincontent">{{Level2EmpPerc}}%</span><br> Level2 Associates </div>
+&nbsp;
+<div class="statistics"><span class="maincontent">{{Level3EmpPerc}}%</span> <br>Level3 Associates </div>
+&nbsp;
+<div class="statistics"><span class="maincontent">{{GreenEmpPerc}}%</span> <br>Green Status </div>
+&nbsp;
+<div class="statistics"><span class="maincontent">{{BlueEmpPerc}}%</span><br>Blue Status </div>
+&nbsp;
+<div class="statistics"><span class="maincontent">{{RedEmpPerc}}%</span><br>Red Status </div>
+<br>
+<br>
+<form ng-form="searchemployees">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Pic</th>
+                <th>Status</th>
+                <th>
+                    <input type="text" [(ngModel)]="searchname" placeholder="Search by Name" name="txtname" id="input${1/(\w+)/\u\1/g}" class="form-control" value="" required="required" pattern="" title="">
+                </th>
+                <th>
+                    <input type="text" [(ngModel)]="searchid" placeholder="Search by Associate ID" name="txtid" id="input${1/(\w+)/\u\1/g}" class="form-control" value="" required="required" pattern="" title="">
+                </th>
+                <th>
+                    <input type="text" [(ngModel)]="searchemail" placeholder="Search by email ID" name="txtemail" id="input${1/(\w+)/\u\1/g}" class="form-control" value="" required="required" pattern="" title="">
+                </th>
+                <th>
+                    <input type="text" [(ngModel)]="searchmobile" placeholder="Search by Mobile" name="txtmobile" id="input${1/(\w+)/\u\1/g}" class="form-control" value="" required="required" pattern="" title="">
+                </th>
+                <th>
+
+                    <input type="text" [(ngModel)]="searchskill" placeholder="Search by Strong Skills" name="txtskills" id="input${1/(\w+)/\u\1/g}" class="form-control" value="" required="required" pattern="" title="">
+
+                </th>
+                <th colspan="3">
+                    <button type="button" [routerLink]="['../Associate', 0]" (click)="AddAssociateClicked()" class="btn btn-primary">Add New Associate</button>
+                </th>
+                <th>
+
+                    <button type="button" [routerLink]="['../Skills']" class="btn btn-default">Add Skill</button>
+
+                </th>
+            </tr>
+        </thead>
+        <tr *ngFor="let item of associateList|searchFilter:'associatename':searchname|searchFilter:'associateid':searchid
+          |searchFilter:'email':searchemail|searchFilter:'mobile':searchmobile|searchFilter:'skillset':searchskill">
+            <td>
+                <img [src]="item.image" class="img-responsive" alt="Image">
+            </td>
+            <td>
+                <div class="statuscolour bluestatus" *ngIf="item.statusblue==1"></div>
+                <div class="statuscolour greenstatus" *ngIf="item.statusgreen==1"></div>
+                <div class="statuscolour redstatus" *ngIf="item.statusred==1"></div>
+            </td>
+            <td>{{item.associatename}}</td>
+            <td>{{item.associateid}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.mobile}}</td>
+            <td>{{item.skillset}}</td>
+            <td>
+                <button type="button" (click)="EditClicked(item)" class="btn btn-info">Edit</button>
+            </td>
+            <td>
+                <button type="button" (click)="DeleteClicked(item)" class="btn btn-danger">Delete</button>
+            </td>
+            <td>
+
+                <button type="button" (click)="ViewClicked(item)" class="btn btn-info">View</button>
+
+            </td>
+        </tr>
+    </table>   
+    <a [routerLink]="['/Dashboard']">
+        Dashboard
+    </a>
+    <a [routerLink]="['/Associate', 0]">
+        Add Associate
+    </a>
+    <a [routerLink]="['/Skills']">
+        Add Skills
+    </a> 
+</form>

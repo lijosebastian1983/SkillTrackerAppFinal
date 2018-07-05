@@ -1,0 +1,18 @@
+button{
+    
+    border-color: black;
+}
+
+.statusbutton{
+    width:35pt;
+    height: 35pt;
+    font-size: 10pt;
+    margin: 0;
+}
+
+.levelbutton{
+    width:35pt;
+    height: 35pt;
+    font-size: 10pt;
+    margin: 0;
+}
